@@ -10,4 +10,15 @@ export class Dish{
     label:String;
     price:String;
     description:String;
+    
+   
+   
 }
+export class comments{
+    ratings:number;
+    comment:String;
+    date:Date;
+    author:String;
+}
+
+
