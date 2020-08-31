@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog,MatDialogRef } from '@angular/material';
+import { Component, OnInit ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { MatDialog,MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatFormFieldModule, MatFormField } from '@angular/material/form-field';
+import {MatTableDataSource} from '@angular/material/table';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,9 +9,15 @@ import { MatDialog,MatDialogRef } from '@angular/material';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  user={username:'' ,password:'' ,remember:false};
+  constructor( public dialogRef:MatDialogRef<LoginComponent>) { }
 
   ngOnInit(): void {
+    
+  }
+  onSubmit(){
+    console.log('User:',this.user);
+    this.dialogRef.close();
   }
 
 }
