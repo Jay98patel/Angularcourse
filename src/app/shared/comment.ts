@@ -1,7 +1,7 @@
 export class Comment{
+    author:String;
     rating :number;
     comment:String;
-    author:String;
     date:String;
 
 }
